@@ -30,28 +30,7 @@ namespace LeetCode.ProgrammingTestsAndSolutions
         #endregion
         public static int[] Duplicate(int[] arr)
         {
-            //int[] narr = new int[arr.Length];
-            //int length = 0;
-
-            //for (int i = 0; i < arr.Length; i++)
-            //{
-            //    narr[length] = arr[i];
-
-            //    if (arr[i]== 0)
-            //    {
-            //        narr[length + 1] = 0;
-            //        length++;
-            //    }
-            //    if (length == arr.Length - 1)
-            //        break;
-
-            //    length++;
-            //}
-
-            ////arr = new int[narr.Length];
-            //arr = narr;
-
-            //return arr;
+         
             var jumpcount = 0;
             for (int i = 0; i < arr.Length - 1; i++)
             {
@@ -72,6 +51,37 @@ namespace LeetCode.ProgrammingTestsAndSolutions
 
             return arr;
         }
+
+        public static int[] Duplicate2(int[] arr)
+        {
+
+            var jumpcount = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] == 0)
+                {
+                    //jumpcount++;
+                    //for (int j = arr.Length - 1; j > i; j--)
+                    //{
+                    //    arr[j] = arr[j - 1];
+                    //}
+
+                    for (int k = i; k < arr.Length -1; k++)
+                    {
+                        arr[k]= arr[k+1];
+                    }
+                    //i++;
+                }
+                if (jumpcount == arr.Length)
+                    break;
+
+                jumpcount++;
+            }
+
+            return arr;
+        }
+
+
 
         public static int maxSubArraySumCount(int[] blocks)
         {

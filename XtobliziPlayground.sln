@@ -19,9 +19,25 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LiskovSubstitutionPrinciple
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LeetCode Programming Tests", "LeetCode Programming Tests", "{65B5150A-8A13-439A-BA82-9DC203699C65}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeetCode.ProgrammingTestsAndSolutions", "Services\LeetCode.ProgrammingTestsAndSolutions\LeetCode.ProgrammingTestsAndSolutions.csproj", "{CCA613B6-470B-4F9D-9D83-558D0BBCB849}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeetCode.Programming.Array", "Services\LeetCode.ProgrammingTestsAndSolutions\LeetCode.Programming.Array.csproj", "{CCA613B6-470B-4F9D-9D83-558D0BBCB849}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HackerRank TestandSolutions", "HackerRank TestandSolutions", "{2582FE52-0EC3-4BCA-84A1-4556A3FAFDAA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Interview_App", "Interview_App", "{889ED7E5-7903-43B8-863B-CE5BE62CA043}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InterviewTesterApp", "..\InterviewTesterApp\InterviewTesterApp\InterviewTesterApp.csproj", "{577E6FF2-E6ED-4312-9B50-E2C388F7D8A1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CoderByte Tests", "CoderByte Tests", "{BA537439-2744-48B4-934F-C6E0D98A7ABA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoderByte.Test", "CoderByte.Test\CoderByte.Test.csproj", "{93E698CE-564A-46E9-AB48-3F5881916C11}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Csharp Corner Learns", "Csharp Corner Learns", "{711D72DA-0BAB-41A2-A1A1-A2EDE27F791C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Parallel_Programming", "Charp Corner Learns\Parallel_Programming\Parallel_Programming.csproj", "{A214F966-FDCF-4AC5-BFF2-0CF8A4AC31B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Time Zone and Localtime Practice", "Time Zone and Localtime Practice", "{CE3CE49B-AF9E-42B5-A0F4-4042DEED6CC0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeZoneAndLocalTimePractice", "TimeZoneAndLocalTimePractice\TimeZoneAndLocalTimePractice.csproj", "{6F2B6215-2D82-45FC-B314-E11B7F814F08}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +69,22 @@ Global
 		{CCA613B6-470B-4F9D-9D83-558D0BBCB849}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCA613B6-470B-4F9D-9D83-558D0BBCB849}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CCA613B6-470B-4F9D-9D83-558D0BBCB849}.Release|Any CPU.Build.0 = Release|Any CPU
+		{577E6FF2-E6ED-4312-9B50-E2C388F7D8A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{577E6FF2-E6ED-4312-9B50-E2C388F7D8A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{577E6FF2-E6ED-4312-9B50-E2C388F7D8A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{577E6FF2-E6ED-4312-9B50-E2C388F7D8A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93E698CE-564A-46E9-AB48-3F5881916C11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93E698CE-564A-46E9-AB48-3F5881916C11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93E698CE-564A-46E9-AB48-3F5881916C11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93E698CE-564A-46E9-AB48-3F5881916C11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A214F966-FDCF-4AC5-BFF2-0CF8A4AC31B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A214F966-FDCF-4AC5-BFF2-0CF8A4AC31B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A214F966-FDCF-4AC5-BFF2-0CF8A4AC31B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A214F966-FDCF-4AC5-BFF2-0CF8A4AC31B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F2B6215-2D82-45FC-B314-E11B7F814F08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F2B6215-2D82-45FC-B314-E11B7F814F08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F2B6215-2D82-45FC-B314-E11B7F814F08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F2B6215-2D82-45FC-B314-E11B7F814F08}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +94,10 @@ Global
 		{30BA82DB-F7BD-45B2-A90D-29E62D3206C0} = {52844D08-6692-4893-B048-CC586A749A05}
 		{78DB9E5E-C96C-4A17-ADB0-4E6A3176333C} = {A3EAB321-A927-4701-B9EC-BC045FBFF689}
 		{CCA613B6-470B-4F9D-9D83-558D0BBCB849} = {65B5150A-8A13-439A-BA82-9DC203699C65}
+		{577E6FF2-E6ED-4312-9B50-E2C388F7D8A1} = {889ED7E5-7903-43B8-863B-CE5BE62CA043}
+		{93E698CE-564A-46E9-AB48-3F5881916C11} = {BA537439-2744-48B4-934F-C6E0D98A7ABA}
+		{A214F966-FDCF-4AC5-BFF2-0CF8A4AC31B6} = {711D72DA-0BAB-41A2-A1A1-A2EDE27F791C}
+		{6F2B6215-2D82-45FC-B314-E11B7F814F08} = {CE3CE49B-AF9E-42B5-A0F4-4042DEED6CC0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F74A0778-47E4-4B48-9A53-BF4AE79272A4}
