@@ -1,7 +1,8 @@
-﻿using LeetCode.Programming.Array;
+﻿using LeetCode.Programming.Arrays;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace LeetCode.ProgrammingTestsAndSolutions
 {
@@ -9,6 +10,8 @@ namespace LeetCode.ProgrammingTestsAndSolutions
     {
         static void Main(string[] args)
         {
+            // method takes a 
+
             #region Array Delete and Searching
 
             // Third Maximum Number 
@@ -76,9 +79,34 @@ namespace LeetCode.ProgrammingTestsAndSolutions
                 Console.WriteLine(item);
 			#endregion
 
-
-            
-
         }
-	}
+
+        static IEnumerable<string> ReturnMostSold(List<Car> cars)
+        {
+            var grouped = cars.GroupBy(x => x.Manufacturer);
+            HashSet<Car> result = new HashSet<Car>(3);
+
+            //foreach (var item in cars)    
+            //{
+            //    if () ;
+            //}
+            ////List<string> result = new List<string>();
+
+            ////long maxSeller = result.FirstOrDefault().Count();
+            //IDictionary<long,string> manufacturers = new SortedDictionary<long,string>();
+
+
+            return new string[6];
+        }
+    }
+
+    public class Car
+    {
+        public string Manufacturer { get; set; }
+        
+    }
+
+ 
+
+   
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace LeetCode.Programming.Array
+namespace LeetCode.Programming.Arrays
 {
 	public class ArrayDeletionSearching
 	{
