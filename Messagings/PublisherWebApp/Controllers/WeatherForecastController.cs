@@ -21,7 +21,7 @@ namespace PublisherWebApp.Controllers
             this.bus = bus;
         }
 
-        [HttpGet]
+        [HttpGet("simulate-message-brokering")]
         public async Task<IEnumerable<WeatherForecast>> Get()
         {
             var rng = new Random();
@@ -34,8 +34,6 @@ namespace PublisherWebApp.Controllers
                     Text = $" {i} =>  This is the message sent as at the time's millisecond: {DateTime.Now.Millisecond}",
                     DateCreated = DateTime.Now
                 };
-
-
                 await bus.SendReceive.SendAsync($"{nameof(WeatherForecast)}", message).ContinueWith(async k => { await PostPublishAction(k, message); });
             }
            
@@ -45,15 +43,51 @@ namespace PublisherWebApp.Controllers
                 Date = DateTime.Now.AddDays(index),
                 TemperatureC = rng.Next(-20, 55),
                 Summary = Summaries[rng.Next(Summaries.Length)]
-            })
-            .ToArray();
+            }).ToArray();
         }
+
+        [HttpGet]
+        public async Task<IActionResult> TestExceptionBehaviour()
+		{
+			try
+			{
+                SimulateException();
+
+                return await Task.FromResult(Ok("Successfully tested process"));
+			}
+			catch (Exception)
+			{
+                Console.WriteLine("Internal Server Error");
+				throw;
+			}
+		}
+
+        [NonAction]
+        private void SimulateException()
+		{
+			try
+			{
+                PerformProcess();
+            }
+			catch (RestException)
+			{
+                Console.WriteLine("Enter Exception 2");
+			}
+
+		}
 
         private static readonly string[] Summaries = new[]
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
        
+        private void PerformProcess()
+		{
+            if (true)
+                throw new RestException("Rest Exception Occurred");
+
+            
+		}
  
         private async Task PostPublishAction(Task task,BrokerMessagesModel.Lib.Message message)
         {
@@ -67,4 +101,14 @@ namespace PublisherWebApp.Controllers
             }
         }
     }
+
+    public class RestException: Exception
+	{
+		public int Code { get; set; }
+		public RestException(string message)
+		{
+            Console.Write(message);
+            Code = 500;
+		}
+	}
 }

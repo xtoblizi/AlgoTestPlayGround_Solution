@@ -38,8 +38,7 @@ namespace CoderByte.Test
             }
 
             result = string.Join(',', splittedJson);
-            return result;
-            
+            return result;           
         }
 
         public async static Task<List<string>> getUserNamesWebREsponse(int threshold)

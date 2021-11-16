@@ -7,6 +7,7 @@ using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Serialization.Json;
 
 namespace Xtoblizi.HackerRank.Statistics
 {
@@ -38,6 +39,9 @@ namespace Xtoblizi.HackerRank.Statistics
 
         public async static Task<int> getTotalGoals(string team, int year)
         {
+            var url = $"https://coderbyte.com/api/challenges/json/age-counting";
+            await getUserNamesWebREsponse(10, url);
+
             var page = 1;
             var totalPages = 1;
             var totalGoals = 0;
@@ -45,13 +49,31 @@ namespace Xtoblizi.HackerRank.Statistics
             {
                 using (var client = new HttpClient())
                 {
-                    var url = $"https://jsonmock.hackerrank.com/api/football_matches?year={year}&team1={team}&page={page}";
+                   
                     var url2 = $"http://10.0.0.46:5116/api/SmsClient/GetAllSmsClient?startIndex=0&count=2147483647";
                     var response = await client.GetAsync(url);
                     if (response.IsSuccessStatusCode)
                     {
                         var stringResponse = await response.Content.ReadAsStringAsync();
-                        var deserialized = JsonSerializer.Deserialize<HttpUserResponse>(stringResponse);
+                        var deserialized = JsonSerializer.Deserialize<DataResponse>(stringResponse);
+
+                        WebRequest request = WebRequest.Create(url);
+                        WebResponse response2 = request.GetResponse();
+                        string rsult = response2.GetResponseStream().ToString();
+                        StreamReader reader = new StreamReader(response2.GetResponseStream());
+                        string str = reader.ReadLine();
+                        var count = 0;
+
+                        var deserializedRespins = str.Split(",").Where(x => x.Contains("age"));
+
+						foreach (var item in deserializedRespins)
+						{
+                            var ageValue =  item.Remove(0, 4);
+                            int.TryParse(ageValue, out int numberfinal);
+                            if (numberfinal >= 50)
+                                count++;
+						}
+
                         if (deserialized != null)
                         {
                             //totalPages = deserialized.total_pages;
@@ -143,14 +165,17 @@ namespace Xtoblizi.HackerRank.Statistics
         }
 
 
-        public async  static Task<List<string>> getUserNamesWebREsponse(int threshold)
+        public async  static Task<List<string>> getUserNamesWebREsponse(int threshold, string uri)
         {
             var pagenumber = 1;
-            var url = $"https://jsonmock.hackerrank.com/api/article_users?page={pagenumber}";
+            var url2 = $"https://jsonmock.hackerrank.com/api/article_users?page={pagenumber}";
+            var url = uri;
             WebRequest request = WebRequest.Create(url);  
             WebResponse response = request.GetResponse();
+            string rsult = response.GetResponseStream().ToString();
             StreamReader reader = new StreamReader(response.GetResponseStream());
             string str = reader.ReadLine();
+            
             while (str != null)
             {
                 Console.WriteLine(str);
@@ -170,21 +195,21 @@ namespace Xtoblizi.HackerRank.Statistics
 
             #region Practice LinkedList
 
-            var llist = new LinkedListBase<int>(new Node<int>(16));
+            //var llist = new LinkedListBase<int>(new Node<int>(16));
 
-            llist.AddToEnd(13);
-            llist.AddToEnd(7);
-            // llist.AddToEnd(13);
-            llist.AddToNthPosition(1, 2, llist.head);
+            //llist.AddToEnd(13);
+            //llist.AddToEnd(7);
+            //// llist.AddToEnd(13);
+            //llist.AddToNthPosition(1, 2, llist.head);
 
-            llist.Print();
+            //llist.Print();
 
             #endregion
 
            // var totoalGoals = getTotalGoals("Barcelona", 2011).Result;
 
 
-            var resultUsersRemoveLater = getUserNameskeyValue(34).Result;
+            var resultUsersRemoveLater = getTotalGoals("nigerian", 2020).Result;
 
         //    var resultUsersCorrect = getUserNames(34).Result;
 
@@ -289,7 +314,10 @@ namespace Xtoblizi.HackerRank.Statistics
         }
     }
 
-    
+    public class DataResponse
+	{
+		public string data { get; set; }
+	}
 
     public class HttpUserResponse
     {

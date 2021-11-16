@@ -37,25 +37,21 @@ namespace LeetCode.Programming.Arrays
 		}
 
 		/// <summary>
-		/// Given an array nums of n integers where nums[i] is in the range [1,n] return an array of all the integers in the range [1,n] that donot appear in nums.
+		/// Given an array nums of n integers where nums[i] is in the range [1,n] return an array of all
+		/// the integers in the range [1,n] that do not appear in nums.
 		/// Example1. Input nums = [4,3,2,7,8,2,3,1] Output=> [5,6]. Example2 Input nums=[1,1]. Output => [2]
 		/// </summary>
 		/// <param name="nums"></param>
 		/// <returns></returns>
 		public static IList<int> DisappearingNumbers(int [] nums)
 		{
-			HashSet<int> checker = new HashSet<int>();
+			HashSet<int> checker = new HashSet<int>(nums);
 			IList<int> result = new List<int>();
-
-			for (int i = 0; i < nums.Length; i++)
-			{
-				checker.Add(nums[i]);
-			}
 
 			for (int i = 1; i <= nums.Length; i++)
 			{
-				if(!checker.Contains(i))
-					result.Add(i);
+				if(!checker.Contains(nums[i]))
+					result.Add(nums[i]);
 			}
 
 			return result;
@@ -72,18 +68,19 @@ namespace LeetCode.Programming.Arrays
 		public static int[] SortedArraySquares(int [] nums)
 		{
 			IDictionary<string,int> result = new SortedDictionary<string,int>();
-			// do a binary search for 0 if exist if not then add values to the result array graccefully. since its sorted
+			//// do a binary search for 0 if exist if not then add values to the result array gracefully. since its sorted
 			var i = Array.BinarySearch(nums, 0);
-			int[] subarr;
+			//int[] subarr;
 
-			if (i != -1)
-				subarr = new int[nums.Length-];
-			for (int i = 0; i < nums.Length; i++)
-			{
-				nums[i] = nums[i] * nums[i];
-				result.Add(nums[i]);
-			}
-			return result.ToArray();
+			
+			//if (i != -1)
+			//	subarr = new int[nums.Length-];
+			//for (int i = 0; i < nums.Length; i++)
+			//{
+			//	nums[i] = nums[i] * nums[i];
+			//	result.Add(nums[i]);
+			//}
+			return default;
 		}
 
 		

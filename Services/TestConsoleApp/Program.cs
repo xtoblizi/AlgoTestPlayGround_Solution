@@ -10,6 +10,21 @@ namespace TestConsoleApp
 {
     public class Table { public int Id { get; set; } public string GroupName { get; set; } public string Name { get; set; } public DateTime ExpirationTime { get; set; }}
     
+    public class Test
+	{
+        int ReturnLowestPossibleNumber(int[] A)
+		{
+            HashSet<int> sortedArray = new HashSet<int>(A);
+           
+			for (int i = 1; i <= A.Length; i++)
+			{
+                if ( sortedArray.Contains(i))
+                    return i;
+			}
+
+            return sortedArray.Count + 1;
+		}
+	}
     class Program
     {
         static int length (string str)

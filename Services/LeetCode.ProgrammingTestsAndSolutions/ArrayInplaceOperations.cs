@@ -74,9 +74,39 @@ namespace LeetCode.Programming.Arrays
 			return A;
 		}
 
+		public int[] RotateAnArray(int[] arr)
+		{
+			if (arr.Length == 1)
+				return arr;
+			
+			var last = arr[^1];
+			var temp = arr[0];
+			for (var i = 1; i < arr.Length; i++)
+			{
+				(arr[i], temp) = (temp, arr[i]);
+			}
+
+			arr[0] = last;
+			return arr;
+		}
+		public int[] ReverseArray(int[] arr)
+		{
+			for (var i = 0; i < arr.Length/2; i++)
+				(arr[i], arr[arr.Length -i - 1]) = (arr[arr.Length -i - 1], arr[i]);
+
+			// the code above is a deconstructed version of the one below. helps reassign values without create a temp memory location.
+			// for (int i = 0; i < arr.Length/2; i++)
+			// {
+			// 	int temp = arr[i];
+			// 	arr[i] = arr[arr.Length - i - 1];
+			// 	arr[arr.Length - i - 1] = temp;
+			// }
+
+			return arr;
+		}
+		
 		public static  int HeightChecker(int[] heights)
 		{
-
 			int[] count = new int[101];
 			int[] target = new int[heights.Length];
 

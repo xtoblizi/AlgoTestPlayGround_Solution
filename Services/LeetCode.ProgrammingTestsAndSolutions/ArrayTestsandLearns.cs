@@ -102,7 +102,7 @@ namespace LeetCode.ProgrammingTestsAndSolutions
             var lastindex = size - 1;
             for (int i = 0; i < size; i++)
             {
-                // initiate tranversal from the front
+                // initiate transversal from the front
                 if(i != lastindex)
                 {
                     if (blocks[i] <= blocks[i + 1])

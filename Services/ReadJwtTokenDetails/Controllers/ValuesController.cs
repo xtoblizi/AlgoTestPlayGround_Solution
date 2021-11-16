@@ -34,8 +34,8 @@ namespace ReadJwtTokenDetails.Controllers
     public class ValuesController : ControllerBase
     {
         // GET api/values
-        [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
+        [HttpPost]
+        public ActionResult<IEnumerable<string>> Get(WhatsappMessage whatsappMessage)
         {
             try
             {
@@ -82,7 +82,7 @@ namespace ReadJwtTokenDetails.Controllers
                 throw ex;
             }
         }
-
+        
         // GET api/values/5
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)
@@ -140,7 +140,22 @@ namespace ReadJwtTokenDetails.Controllers
         
     }
 
-    public class LoginDetails
+	#region Whatsapp response model
+    public class WhatsappMessage
+	{
+		public string Recipient_Type { get; set; }
+		public string To { get; set; }
+		public string Type { get; set; }
+		public string Text { get; set; }
+	}
+
+    public class Text
+	{
+		public string Body { get; set; }
+	}
+	#endregion
+
+	public class LoginDetails
     {
         public int Id { get; set; }
         public string access_token { get; set; }

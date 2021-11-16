@@ -47,15 +47,23 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Learning LINQ", "Learning L
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Message Brokering", "Message Brokering", "{15356E6E-2170-483D-9366-B5D5E85AA19E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PublisherWebApp", "Messagings\PublisherWebApp\PublisherWebApp.csproj", "{EEAB9EA9-E146-426F-A5B1-444CA26CF38C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PublisherWebApp", "Messagings\PublisherWebApp\PublisherWebApp.csproj", "{EEAB9EA9-E146-426F-A5B1-444CA26CF38C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SubscriberWebApp", "Messagings\SubscriberWebApp\SubscriberWebApp.csproj", "{28D7603C-5DB6-439A-AB30-BF89BBC0E31B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrokerMessagesModel.Lib", "Messagings\BrokerMessagesModel.Lib\BrokerMessagesModel.Lib.csproj", "{87ADD656-46DE-4114-A55C-0B517B4CA1B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrokerMessagesModel.Lib", "Messagings\BrokerMessagesModel.Lib\BrokerMessagesModel.Lib.csproj", "{87ADD656-46DE-4114-A55C-0B517B4CA1B8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Publisher", "Publisher", "{DDF5805D-87D2-4A9C-8F65-4E3A290A483C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Subscriber", "Subscriber", "{566C902A-33EE-42B4-96E5-B6E390A0D4BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode.Test", "Services\UnitTests\LeetCode.Test\LeetCode.Test.csproj", "{1B10855C-22EC-49B4-99D7-C2C4FE077B91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuestpondDataAndAlgorithm", "DataStructureAndAlgorithm\QuestpondDataAndAlgorithm\QuestpondDataAndAlgorithm.csproj", "{B0336BD4-4909-4758-BAB1-DEDC1CCFB182}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZXTEST", "ZXTEST\ZXTEST.csproj", "{D40F8B54-C137-4D15-B215-FACBA7ED24F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeleSoftasTestApp", "TeleSoftasTestApp\TeleSoftasTestApp.csproj", "{C3F88C9F-E0E7-48F1-AF02-F7D0FE4E3308}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -123,6 +131,22 @@ Global
 		{87ADD656-46DE-4114-A55C-0B517B4CA1B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87ADD656-46DE-4114-A55C-0B517B4CA1B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87ADD656-46DE-4114-A55C-0B517B4CA1B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B10855C-22EC-49B4-99D7-C2C4FE077B91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B10855C-22EC-49B4-99D7-C2C4FE077B91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B10855C-22EC-49B4-99D7-C2C4FE077B91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B10855C-22EC-49B4-99D7-C2C4FE077B91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0336BD4-4909-4758-BAB1-DEDC1CCFB182}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0336BD4-4909-4758-BAB1-DEDC1CCFB182}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0336BD4-4909-4758-BAB1-DEDC1CCFB182}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0336BD4-4909-4758-BAB1-DEDC1CCFB182}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D40F8B54-C137-4D15-B215-FACBA7ED24F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D40F8B54-C137-4D15-B215-FACBA7ED24F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D40F8B54-C137-4D15-B215-FACBA7ED24F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D40F8B54-C137-4D15-B215-FACBA7ED24F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3F88C9F-E0E7-48F1-AF02-F7D0FE4E3308}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3F88C9F-E0E7-48F1-AF02-F7D0FE4E3308}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3F88C9F-E0E7-48F1-AF02-F7D0FE4E3308}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3F88C9F-E0E7-48F1-AF02-F7D0FE4E3308}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -142,6 +166,7 @@ Global
 		{87ADD656-46DE-4114-A55C-0B517B4CA1B8} = {15356E6E-2170-483D-9366-B5D5E85AA19E}
 		{DDF5805D-87D2-4A9C-8F65-4E3A290A483C} = {15356E6E-2170-483D-9366-B5D5E85AA19E}
 		{566C902A-33EE-42B4-96E5-B6E390A0D4BE} = {15356E6E-2170-483D-9366-B5D5E85AA19E}
+		{1B10855C-22EC-49B4-99D7-C2C4FE077B91} = {65B5150A-8A13-439A-BA82-9DC203699C65}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F74A0778-47E4-4B48-9A53-BF4AE79272A4}

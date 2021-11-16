@@ -13,8 +13,8 @@ namespace LiskovSubstitutionPrinciple
         public override void AssignManager(Employee manager)
         {
             // This below violates the principle of Liskov Substitution Principle. 
-            // because on use of this CEO in place of an Employee; An exception would be thrown which is a breaking change on 
-            // over thr process of substiting the CEO for Employee.
+            // because on use of this CEO in place of an Employee; An exception would be thrown which is a breaking change 
+            // when substiting the CEO for Employee.
             throw new Exception("The CEO cannot have a mamager");
         }
     }

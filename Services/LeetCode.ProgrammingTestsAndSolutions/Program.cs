@@ -10,16 +10,59 @@ namespace LeetCode.ProgrammingTestsAndSolutions
     {
         static void Main(string[] args)
         {
+
+			try
+			{
+                try
+                {
+                    Car car = null;
+                    var manu = car.Manufacturer;
+                }
+                catch (NullReferenceException ex)
+                {
+                    Console.WriteLine("Null reference exception");
+                    throw ex;
+                }
+                catch (InvalidOperationException ex)
+                {
+                    Console.WriteLine("Invalid operation exception");
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("{0} Base Exception", e.Message);
+                    throw e;
+                }
+                finally
+                {
+                    Console.WriteLine("Finally this is the result");
+                }
+
+            }
+            catch (Exception lasCatch)
+			{
+                Console.WriteLine("This is the value of the last Catch {0}", lasCatch);
+			}
             // method takes a 
+            string[] cars = { "toyota", "benz", "toyota" };
+            List<Car> carsList = new List<Car>
+            {
+                new Car { Manufacturer = "Toyota" },
+                new Car { Manufacturer = "Toyota" },
+                new Car { Manufacturer = "Toyota" },
+                new Car { Manufacturer = "Benz" },  
+                new Car { Manufacturer = "Benz" },  
+                new Car { Manufacturer = "Volvo" },  
+            };
+
 
             #region Array Delete and Searching
 
             // Third Maximum Number 
-            int[] maxnumbers = {1,2,2,5,3,5};
+            int[] maxnumbers = { 1, 2, 2, 5, 3, 5 };
             var thirdMax = ArrayConclusionTests.ThirdMax(maxnumbers);
 
             // Height Checker
-            int[] heights = {1,1,4,2,1,3};
+            int[] heights = { 1, 1, 4, 2, 1, 3 };
             var maxrearrangement = ArrayInplaceOperations.HeightChecker(heights);
 
             // Sort by Parity. sort an array to separate even numbers from odds numbers. having even numbers preceed the array elements
@@ -77,26 +120,42 @@ namespace LeetCode.ProgrammingTestsAndSolutions
 
             foreach (var item in mergeArray)
                 Console.WriteLine(item);
-			#endregion
-
+            #endregion
         }
 
-        static IEnumerable<string> ReturnMostSold(List<Car> cars)
+        /// <summary>
+        /// Given a list of cars with manufacturer information;
+        /// Return the top 3 manufacturers with the highest sales.
+        /// </summary>
+        /// <param name="cars"></param>
+        /// <returns></returns>
+        static IEnumerable<Car> ReturnMostSoldWithDictionary(List<Car> cars)
         {
-            var grouped = cars.GroupBy(x => x.Manufacturer);
-            HashSet<Car> result = new HashSet<Car>(3);
+           // var grouped = cars.GroupBy(x => x).OrderByDescending(x=>x.Count())?.FirstOrDefault().Key;
 
-            //foreach (var item in cars)    
-            //{
-            //    if () ;
-            //}
-            ////List<string> result = new List<string>();
+            IDictionary<string, int> carDictionary = new Dictionary<string, int>();
+			foreach (var item in cars)
+			{
+				if (!carDictionary.ContainsKey(item.Manufacturer))
+				{
+                    carDictionary[item.Manufacturer]++;
+				}
+				else
+				{
+                    carDictionary.Add(item.Manufacturer, 1);
+				}
+			}
 
-            ////long maxSeller = result.FirstOrDefault().Count();
-            //IDictionary<long,string> manufacturers = new SortedDictionary<long,string>();
-
-
-            return new string[6];
+            var sorted = carDictionary.OrderByDescending(x => x.Value).Take(3).Select(k=> new Car {Manufacturer = k.Key });
+            return sorted;
+        }
+        static IEnumerable<Car> ReturnMostSoldWithLinq(List<Car> cars)
+        {
+            var grouped = cars.GroupBy(x => x.Manufacturer)
+                .OrderByDescending(x=>x.Count())?
+                .Take(3).Select(x=> new Car(){Manufacturer = x.Key});
+            
+            return grouped;
         }
     }
 
